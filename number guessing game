@@ -5,9 +5,6 @@ lower = int(input("Enter lower number:-"))
 upper = int(input("Enter upper number:-"))
 
 x = random.randint(lower,upper)
-
-print(x)
-
 count = 0
 
 print("\n\tYou've only got ",
@@ -31,4 +28,3 @@ while count < math.log(upper - lower + 1, 2):
 
 print("The correct number is: %d"%x)
 print("You guessed it in: %d guesses"%count)
-
