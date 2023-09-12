@@ -1,44 +1,34 @@
 import random
 import math
-# Taking Inputs
-lower = int(input("Enter Lower bound:- "))
 
-# Taking Inputs
-upper = int(input("Enter Upper bound:- "))
+lower = int(input("Enter lower number:-"))
+upper = int(input("Enter upper number:-"))
 
-# generating random number between
-# the lower and upper
-x = random.randint(lower, upper)
-print("\n\tYou've only ",
+x = random.randint(lower,upper)
+
+print(x)
+
+count = 0
+
+print("\n\tYou've only got ",
 	round(math.log(upper - lower + 1, 2)),
 	" chances to guess the integer!\n")
 
-# Initializing the number of guesses.
-count = 0
-
-# for calculation of minimum number of
-# guesses depends upon range
 while count < math.log(upper - lower + 1, 2):
-	count += 1
+    count += 1
 
-	# taking guessing number as input
-	guess = int(input("Guess a number:- "))
+    guess = int(input("Enter your guess:"))
 
-	# Condition testing
-	if x == guess:
-		print("Congratulations you did it in ",
-			count, " try")
-		# Once guessed, loop will break
-		break
-	elif x > guess:
-		print("You guessed too small!")
-	elif x < guess:
-		print("You Guessed too high!")
+    if guess == x:
+        print("Congratulations you guessed it right!!!")
+        break
+    elif guess < x:
+        print("You guessed it lower")
+    elif guess > x:
+        print("You guessed it higher")
+    else:
+        print("You guessed it wrong")
 
-# If Guessing is more than required guesses,
-# shows this output.
-if count >= math.log(upper - lower + 1, 2):
-	print("\nThe number is %d" % x)
-	print("\tBetter Luck Next time!")
+print("The correct number is: %d"%x)
+print("You guessed it in: %d guesses"%count)
 
-# Better to use This source Code on pycharm!
